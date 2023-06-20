@@ -28,3 +28,9 @@ readHTML<-function(page_numb){
 db_list<-lapply(1:10,readHTML)  #itera sobre las páginas y retorna una lista con 10 elementos
 db<-do.call(rbind,db_list) #une todo en un data.frame
 
+# Seguimos con el codigo _ DR
+
+modelo2caret_loocv <- train(lnw_2016~educ, 
+                           data = nlsy, 
+                            method = 'lm',
+                             trControl= ctrl_loocv )
